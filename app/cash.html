@@ -71,7 +71,7 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       
-      <div class="panel panel-primary" style="clear:both"> 
+      <div class="panel panel-primary"> 
         <!-- Default panel contents -->
         <div class="panel-heading"><span class="glyphicon glyphicon-usd"></span> 终端交易管理</a></div>
 		<div class="panel-body">
@@ -92,10 +92,124 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
 		<h1>3242452.00</h1>
         </div>
 		<div class="col-xs-12">
-        <h4><span class="glyphicon glyphicon-signal"></span> 历史交易曲线图</h4>
+        <h5><span class="glyphicon glyphicon-signal"></span> 历史交易曲线图</h5>
 		<div id="graph"></div>
         </div>
         
+         <div>
+          <table class="table table-hover" id="list-table">
+            <thead>
+            <tr><td colspan="3"><span class="glyphicon glyphicon-search"></span> 终端交易记录</td></tr>
+            <tr><td colspan="3">
+            <div class="col-xs-4"><input id="s1" type="date" class="form-control" placeholder="开始日期"></div><div class="col-xs-4"><input id="s2" type="date" class="form-control" placeholder="结束日期">
+            </div><div class="col-xs-4">
+            <button id="gosearch" class="btn btn-primary" type="button"> <span class="glyphicon glyphicon-search"></span> 查询记录</button></div></td>
+            </tr>
+            <tr>
+            <th>交易编号</th>
+            <th>交易金额</th>
+            <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="parent" id="row1">
+            <td>D23423423123123213</td>
+            <td>125.00</td>
+            <td><a>详细</a></td>
+            </tr>
+            <tr class="child-row1">
+            <td colspan="3">
+            交易编号：D23423423123123213<br>
+            交易金额：125.00<br>
+            交易时间：2014-12-25<br>
+            交易事件：购买产品0001<br>
+            交易状态：完成<br>
+            交易方式：现金<br>
+            购买用户：匿名帐户<br>
+            来自终端：A232132<br>
+            </td>
+            </tr>
+            
+            <tr class="parent" id="row2">
+            <td>D23423423123123213</td>
+            <td>222.00</td>
+            <td><a>详细</a></td>
+            </tr>
+            <tr class="child-row2">
+            <td colspan="3">
+            交易编号：D23423423123123213<br>
+            交易金额：222.00<br>
+            交易时间：2014-12-25<br>
+            交易事件：购买产品0001<br>
+            交易状态：完成<br>
+            交易方式：现金<br>
+            购买用户：匿名帐户<br>
+            来自终端：A232132<br>
+            </td>
+            </tr>
+            
+            <tr class="parent" id="row3">
+            <td>E22223423123123213</td>
+            <td>445.00</td>
+            <td><a>详细</a></td>
+            </tr>
+            <tr class="child-row3">
+            <td colspan="3">
+            交易编号：E22223423123123213<br>
+            交易金额：445.00<br>
+            交易时间：2014-12-25<br>
+            交易事件：购买产品0001<br>
+            交易状态：完成<br>
+            交易方式：现金<br>
+            购买用户：匿名帐户<br>
+            来自终端：A232132<br>
+            </td>
+            </tr>
+            
+            <tr class="parent" id="row4">
+            <td>D33333423123123213</td>
+            <td>525.00</td>
+            <td><a>详细</a></td>
+            </tr>
+            <tr class="child-row4">
+            <td colspan="3">
+            交易编号：D33333423123123213<br>
+            交易金额：525.00<br>
+            交易时间：2014-12-25<br>
+            交易事件：购买产品0001<br>
+            交易状态：完成<br>
+            交易方式：现金<br>
+            购买用户：匿名帐户<br>
+            来自终端：A232132<br>
+            </td>
+            </tr>
+            
+            <tr class="parent" id="row5">
+            <td>D44443423123123213</td>
+            <td>112.00</td>
+            <td><a>详细</a></td>
+            </tr>
+            <tr class="child-row5">
+            <td colspan="3">
+            交易编号：D44443423123123213<br>
+            交易金额：112.00<br>
+            交易时间：2014-12-25<br>
+            交易事件：购买产品0001<br>
+            交易状态：完成<br>
+            交易方式：现金<br>
+            购买用户：匿名帐户<br>
+            来自终端：A232132<br>
+            </td>
+            </tr>
+           
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3"><button id="morepage" type="button" class="btn btn-primary btn-block"><span id="loading"></span>加载更多</button></td>
+              </tr>
+            </tfoot>
+            </table>
+            </div>
         </div>
        
 
@@ -136,6 +250,12 @@ Morris.Area({
   labels: ['licensed'],
   resize: true
 });
+ $('tr.parent').click(function(){   // 获取所谓的父行  
+           $(this).toggleClass("info")  // 添加/删除高亮
+           .siblings('.child-'+this.id).toggle();  // 隐藏/显示所谓的子行
+   });
+ $("tr[class^='child']").hide();
+
 });
 </script>
 </body>
