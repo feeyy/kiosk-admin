@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1 ,maximum-scale=1, user-scalable=no">
+<title>自助终端后台管理系统</title>
+
+<!-- Bootstrap -->
+<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="dist/css/dashboard.css" rel="stylesheet">
+<link rel="stylesheet" href="dist/css/prettify.min.css">
+<link rel="stylesheet" href="dist/css/morris.css">
+<!--[if lt IE 9]><script src="dist/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="dist/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="dist/js/html5shiv.min.js"></script>
+      <script src="dist/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="table-hover">
+<div id="web_bg" style="position:absolute; width:100%; height:100%; z-index:-1"> <img style="position:fixed;" src="dist/img/bg2.jpg" height="100%" width="100%" /> </div>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+     <a href="index.html"><span class="navbar-brand" style="color:#FFF;"><span class="glyphicon glyphicon-chevron-left"></span>  返回</span></a>
+      <button class="navbar-toggle collapsed" 
+aria-expanded="false" aria-controls="navbar" type="button" data-toggle="collapse" 
+data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+
+      </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> 系统管理首页</a></li>
+        <li><a href="config.html"><span class="glyphicon glyphicon-cog"></span> 系统参数设置</a></li>
+        <li><a href="admin.html"><span class="glyphicon glyphicon-lock"></span> 后台权限管理</a></li>
+        <li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon glyphicon-picture"></span> 更换背景 <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="javascript:chbg(1)"><img class="img-responsive" src="dist/img/bg1-s.jpg" alt="背景1"/></a></li>
+            <li><a href="javascript:chbg(2)"><img class="img-responsive" src="dist/img/bg2-s.jpg" alt="背景2"/></a></li>
+            <li><a href="javascript:chbg(3)"><img class="img-responsive" src="dist/img/bg3-s.jpg" alt="背景3"/></a></li>
+            <li><a href="javascript:chbg(4)"><img class="img-responsive" src="dist/img/bg4-s.jpg" alt="背景4"/></a></li>
+            <li><a href="javascript:chbg(5)"><img class="img-responsive" src="dist/img/bg5-s.jpg" alt="背景5"/></a></li>
+          </ul>
+        </li>
+        <li> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="glyphicon glyphicon-user"></span> 超级管理员 <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li class="text-center"><a href="#"><img src="dist/img/tpic/2.png" alt="" width="40" height="40" class="img-circle" style="border:#ccc solid 2px;"><br>
+              账户名</a></li>
+            <li class="text-center"><a href="login.html"><span class="glyphicon glyphicon-off"></span> 退出登录</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar" >
+        <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> 系统管理首页</a></li>
+        <li><a href="config.html"><span class="glyphicon glyphicon-cog"></span> 系统参数设置</a></li>
+        <li><a href="admin.html"><span class="glyphicon glyphicon-lock"></span> 后台权限管理</a></li>
+        <li><a href="users.html"><span class="glyphicon glyphicon-user"></span> 会员帐户管理</a></li>
+        <li class="active"><a href="cash.html"><span class="glyphicon glyphicon-usd"></span> 终端交易管理</a></li>
+        <li><a href="device.html"><span class="glyphicon glyphicon-hdd"></span> 终端设备管理</a></li>
+        <li><a href="help.html"><span class="glyphicon glyphicon-question-sign"></span> 使用帮助</a></li>
+      </ul>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      
+      <div class="panel panel-primary" style="clear:both"> 
+        <!-- Default panel contents -->
+        <div class="panel-heading"><span class="glyphicon glyphicon-usd"></span> 终端交易管理</a></div>
+		<div class="panel-body">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" style="background:#d9534f; color:#FFF;">
+       <h5><span class="glyphicon glyphicon-calendar"></span> 今日交易额（元）</h5>
+		<h1>20000.00</h1>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" style="background:#f0ad4e; color:#FFF;">
+        <h5><span class="glyphicon glyphicon-usd"></span> 总交易额（元）</h5>
+		<h1>95300000.00</h1>
+        </div>
+         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" style="background:#428bca; color:#fff;">
+        <h5><span class="glyphicon glyphicon-time"></span> 近一周交易额（元）</h5>
+		<h1>1240052.00</h1>
+        </div>
+         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" style="background:#5bc0de; color:#fff;">
+        <h5><span class="glyphicon glyphicon-time"></span> 近一月交易额（元）</h5>
+		<h1>3242452.00</h1>
+        </div>
+		<div class="col-xs-12">
+        <h4><span class="glyphicon glyphicon-signal"></span> 历史交易曲线图</h4>
+		<div id="graph"></div>
+        </div>
+        
+        </div>
+       
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="dist/js/jquery.min.js"></script> 
+<script src="dist/js/bootstrap.min.js"></script> 
+<script src="dist/js/ie10-viewport-bug-workaround.js"></script> 
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> 
+<script src="dist/js/jquery.cookie.js"></script> 
+<script src="dist/js/bgchange.js"></script> 
+<script src="dist/js/raphael-min.js"></script>
+<script src="dist/js/morris.js"></script>
+<script src="dist/js/prettify.min.js"></script>
+<script>
+$(function () {
+  var day_data = [
+  {"period": "2014-10-01", "licensed": 3007},
+  {"period": "2014-10-02", "licensed": 1351},
+  {"period": "2014-10-03", "licensed": 6269},
+  {"period": "2014-10-04", "licensed": 3171},
+  {"period": "2014-10-05", "licensed": 3201},
+  {"period": "2014-10-06", "licensed": 3201},
+  {"period": "2014-10-07", "licensed": 20000}
+];
+Morris.Area({
+  element: 'graph',
+  behaveLikeLine: true,
+  data: day_data,
+  xkey: ['period'],
+  ykeys: ['licensed'],
+  labels: ['licensed'],
+  resize: true
+});
+});
+</script>
+</body>
+</html>

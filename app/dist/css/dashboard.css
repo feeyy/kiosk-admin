@@ -1,0 +1,117 @@
+body {
+	padding: 0px;
+}
+a:hover{
+	text-decoration:none;
+	}
+.navbar-fixed-top {
+	border: 0px currentColor;
+	background:rgba(0,0,0,0.5);
+	color:#FFF;
+}
+.sidebar {
+	display: none;
+}
+@media all and (min-width:768px) {
+.sidebar {
+	padding: 20px;
+	left: 0px;
+	top: 50px;
+	bottom: 0px;
+	display: block;
+	position: fixed;
+	z-index: 1000;
+	-ms-overflow-x: hidden;
+	-ms-overflow-y: auto;
+	background:rgba(0,0,0,0.3);
+}
+}
+.nav-sidebar {
+	margin-right: -21px;
+	margin-bottom: 20px;
+	margin-left: -20px;
+	
+}
+.nav-sidebar li a {
+	color:#FFF;
+}
+.nav-sidebar li a:hover {
+	color:#333;
+}
+.nav-sidebar > li > a {
+	padding-right: 20px;
+	padding-left: 20px;
+
+}
+.nav-sidebar > .active > a {
+	color: rgb(255, 255, 255);
+	background-color: rgba(66, 139, 202,1);
+}
+.nav-sidebar > .active > a:hover {
+	color: rgb(255, 255, 255);
+	background-color: rgba(66, 139, 202,1);
+}
+.nav-sidebar > .active > a:focus {
+	color: rgb(255, 255, 255);
+	background-color: rgba(66, 139, 202,1);
+}
+.main {
+	padding-top:60px;
+	right: 0px;
+	bottom: 0px;
+}
+@media all and (min-width:768px) {
+.main {
+	padding-right: 40px;
+	padding-left: 40px;
+}
+}
+@media all and (max-width:768px) {
+.navbar-fixed-top {
+	background:rgba(0,0,0,0.9);
+}
+.row{padding-right: 0px;
+	padding-left: 0px;
+	margin:0px;}
+.main {
+	padding-right: 0px;
+	padding-left: 0px;
+	padding-top:50px;
+}
+.panel{border:none;border-radius:0px;margin-right:-15px;margin-left:-15px; margin-bottom:-15px;}
+.panel-heading{border:none;border-radius:0px;}
+.panel-body{ padding-right:0px;padding-left:0px; padding-top:0px; padding-bottom:10px;}
+}
+.main .page-header {
+	margin-top: 0px;
+}
+.placeholders {
+	text-align: center;
+	margin-bottom: 0px;
+}
+.placeholders h4 {
+	margin-bottom: 0px;
+	color: #FFF;
+}
+.placeholder {
+	margin-bottom: 20px;
+}
+.placeholder img {
+	border-radius: 50%;
+	display: inline-block;
+	box-shadow: rgba(0,0,0,.25) 0px 0px 2px;
+	
+}
+.tt {
+	color: #FFF;
+	text-shadow: #000 0px 0px 3px;
+	text-decoration:none;
+}
+.list{
+	line-height:40px;
+	float:left;
+	border-bottom:#eee solid 1px;
+	clear:both;
+	width:100%;
+	margin-bottom:5px;
+	}

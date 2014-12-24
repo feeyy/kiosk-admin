@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1 ,maximum-scale=1, user-scalable=no">
+<title>自助终端后台管理系统</title>
+
+<!-- Bootstrap -->
+<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="dist/css/dashboard.css" rel="stylesheet">
+<!--[if lt IE 9]><script src="dist/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="dist/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="dist/js/html5shiv.min.js"></script>
+      <script src="dist/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="web_bg" style="position:absolute; width:100%; height:100%; z-index:-1"> <img style="position:fixed;" src="dist/img/bg2.jpg" height="100%" width="100%" /> </div>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" >
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" 
+aria-expanded="false" aria-controls="navbar" type="button" data-toggle="collapse" 
+data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+      <span class="navbar-brand" style="color:#FFF;"><span class="glyphicon glyphicon-leaf"></span> 自助终端后台管理系统</span> </div>
+    <div class="navbar-collapse collapse" id="navbar" >
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> 系统管理首页</a></li>
+        <li><a href="config.html"><span class="glyphicon glyphicon-cog"></span> 系统参数设置</a></li>
+        <li><a href="admin.html"><span class="glyphicon glyphicon-lock"></span> 后台权限管理</a></li>
+        <li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon glyphicon-picture"></span> 更换背景 <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="javascript:chbg(1)"><img class="img-responsive" src="dist/img/bg1-s.jpg" alt="背景1"/></a></li>
+            <li><a href="javascript:chbg(2)"><img class="img-responsive" src="dist/img/bg2-s.jpg" alt="背景2"/></a></li>
+            <li><a href="javascript:chbg(3)"><img class="img-responsive" src="dist/img/bg3-s.jpg" alt="背景3"/></a></li>
+            <li><a href="javascript:chbg(4)"><img class="img-responsive" src="dist/img/bg4-s.jpg" alt="背景4"/></a></li>
+            <li><a href="javascript:chbg(5)"><img class="img-responsive" src="dist/img/bg5-s.jpg" alt="背景5"/></a></li>
+          </ul>
+        </li>
+        <li> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="glyphicon glyphicon-user"></span> 超级管理员 <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li class="text-center"><a href="#"><img src="dist/img/tpic/2.png" alt="" width="40" height="40" class="img-circle" style="border:#ccc solid 2px;"><br>
+              账户名</a></li>
+            <li class="text-center"><a href="login.html"><span class="glyphicon glyphicon-off"></span> 退出登录</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar">
+        <li class="active"><a href="index.html"><span class="glyphicon glyphicon-home"></span> 系统管理首页</a></li>
+        <li><a href="config.html"><span class="glyphicon glyphicon-cog"></span> 系统参数设置</a></li>
+        <li><a href="admin.html"><span class="glyphicon glyphicon-lock"></span> 后台权限管理</a></li>
+        <li><a href="users.html"><span class="glyphicon glyphicon-user"></span> 会员帐户管理</a></li>
+        <li><a href="cash.html"><span class="glyphicon glyphicon-usd"></span> 终端交易管理</a></li>
+        <li><a href="device.html"><span class="glyphicon glyphicon-hdd"></span> 终端设备管理</a></li>
+        <li><a href="help.html"><span class="glyphicon glyphicon-question-sign"></span> 使用帮助</a></li>
+      </ul>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <div style="text-align:center; padding-top:20px;"> <img src="dist/img/tpic/2.png" alt="" width="120" height="120" class="img-circle" style="border:#fff solid 5px; overflow:hidden; box-shadow: rgba(0,0,0,.25) 0px 0px 3px;">
+        <h3 class="tt">帐户名</h3>
+        <h6 class="tt">超级管理员</h6>
+      </div>
+      <div class="page-header" style="padding-top:20px;">
+        <h5 class="tt"><span class="glyphicon glyphicon-home"></span> 首页菜单</h5>
+      </div>
+      <div class="row placeholders" > <a href="config.html">
+        <div class="col-xs-4 col-sm-3 placeholder"> <img src="dist/img/settings.png" alt="系统参数设置"   width="90" height="90"   class="img-responsive">
+          <h5 class="tt">参数设置</h5>
+        </div>
+        </a> <a href="admin.html">
+        <div class="col-xs-4 col-sm-3 placeholder"><img class="img-responsive"  width="90" height="90" alt="后台权限管理" src="dist/img/go locker.png" >
+          <h5 class="tt">权限管理</h5>
+        </div>
+        </a> <a href="users.html">
+        <div class="col-xs-4 col-sm-3 placeholder"><img class="img-responsive"  width="90" height="90"  alt="会员帐户管理" src="dist/img/contacts.png">
+          <h5 class="tt">会员管理</h5>
+        </div>
+        </a> <a href="cash.html">
+        <div class="col-xs-4 col-sm-3 placeholder"><img class="img-responsive"   width="90" height="90"  alt="终端交易管理" src="dist/img/calls.png">
+          <h5 class="tt">交易管理</h5>
+        </div>
+        </a> <a href="device.html">
+        <div class="col-xs-4 col-sm-3 placeholder"><img class="img-responsive"   width="90" height="90"  alt="终端设备管理" src="dist/img/computer.png">
+          <h5 class="tt">设备管理</h5>
+        </div>
+        </a> <a href="help.html">
+        <div class="col-xs-4 col-sm-3 placeholder"><img class="img-responsive"    width="90" height="90"  alt="使用帮助" src="dist/img/help.png">
+          <h5 class="tt">使用帮助</h5>
+        </div>
+        </a> </div>
+    </div>
+  </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="dist/js/jquery.min.js"></script> 
+<script src="dist/js/bootstrap.min.js"></script>
+<script src="dist/js/jquery.cookie.js"></script>
+<script src="dist/js/bgchange.js"></script> 
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> 
+<script src="dist/js/ie10-viewport-bug-workaround.js"></script> 
+
+</body>
+</html>

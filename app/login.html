@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1 ,maximum-scale=1, user-scalable=no">
+<title>自助终端后台管理系统</title>
+
+<!-- Bootstrap -->
+<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="dist/css/signin.css" rel="stylesheet">
+<!--[if lt IE 9]><script src="dist/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="dist/js/ie-emulation-modes-warning.js"></script>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="dist/js/html5shiv.min.js"></script>
+      <script src="dist/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="web_bg" style="position:absolute; width:100%; height:100%; z-index:-1"> 
+<img style="position:fixed;" src="dist/img/bg2.jpg" height="100%" width="100%" /> 
+</div>
+<div class="container" >
+<form class="form-signin" role="form" action="index.html">
+
+        <h3 class="tt"></h3>
+
+
+ <div style="text-align:center; margin-top:50px;"> <img src="dist/img/people.png" alt="" width="120" height="120" class="img-circle" style="border:#fff solid 5px; margin-bottom:40px;"></div>
+ <div id="tishi" class="tt"><h5>管理员登录</h5></div>
+    <input class="form-control" 
+autofocus="" required type="text" placeholder="用户名" 
+value="">
+    <input class="form-control" required type="password" placeholder="密码" 
+value="">
+   
+    <button class="btn btn-lg btn-primary btn-block" 
+type="submit">登录...</button>
+<div class="tt">
+<br>
+默认用户名密码：admin
+<br>自助终端后台管理系统 V1.0
+</div>
+  </form>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<!-- Placed at the end of the document so the pages load faster --> 
+<script src="dist/js/jquery.min.js"></script> 
+<script src="dist/js/bootstrap.min.js"></script> 
+<script src="dist/js/jquery.cookie.js"></script>
+<script src="dist/js/bgchange.js"></script> 
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> 
+<script src="dist/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
