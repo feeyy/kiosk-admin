@@ -1,3 +1,8 @@
+<!--会员账户管理-服务端代码 -->
+<!--开发者：陈@大少 QQ：820094076  -->
+<!--代码地址：https://github.com/feeyy/kiosk-admin -->
+<!--首次编写时间：2014-10-25  -->
+
 <%@LANGUAGE="VBSCRIPT" CODEPAGE="65001"%>
 <!--#include file="Connections/conn.asp" -->
 <%

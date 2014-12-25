@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿<!--终端交易管理-后台页面代码 -->
+<!--开发者：陈@大少 QQ：820094076  -->
+<!--代码地址：https://github.com/feeyy/kiosk-admin -->
+<!--首次编写时间：2014-10-25  -->
+
+<!DOCTYPE html>
 <html lang="zh-cn">
 <head>
 <meta charset="utf-8">
@@ -21,16 +26,16 @@
     <![endif]-->
 </head>
 <body class="table-hover">
+<!--背景图片 -->
 <div id="web_bg" style="position:absolute; width:100%; height:100%; z-index:-1"> <img style="position:fixed;" src="dist/img/bg2.jpg" height="100%" width="100%" /> </div>
+<!--顶部菜单 -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container-fluid">
-    <div class="navbar-header">
-     <a href="index.html"><span class="navbar-brand" style="color:#FFF;"><span class="glyphicon glyphicon-chevron-left"></span>  返回</span></a>
+    <div class="navbar-header"> <a href="index.html"><span class="navbar-brand" style="color:#FFF;"><span class="glyphicon glyphicon-chevron-left"></span> 返回</span></a>
       <button class="navbar-toggle collapsed" 
 aria-expanded="false" aria-controls="navbar" type="button" data-toggle="collapse" 
 data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-
-      </div>
+    </div>
     <div class="navbar-collapse collapse" id="navbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> 系统管理首页</a></li>
@@ -56,8 +61,10 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
     </div>
   </div>
 </nav>
+<!--主体 -->
 <div class="container-fluid">
-  <div class="row">
+  <div class="row"> 
+    <!--左边菜单 -->
     <div class="col-sm-3 col-md-2 sidebar">
       <ul class="nav nav-sidebar" >
         <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> 系统管理首页</a></li>
@@ -69,158 +76,146 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
         <li><a href="help.html"><span class="glyphicon glyphicon-question-sign"></span> 使用帮助</a></li>
       </ul>
     </div>
+    <!--右边内容 -->
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-      
       <div class="panel panel-primary"> 
         <!-- Default panel contents -->
         <div class="panel-heading"><span class="glyphicon glyphicon-usd"></span> 终端交易管理</a></div>
-		<div class="panel-body">
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" style="background:#d9534f; color:#FFF;">
-       <h5><span class="glyphicon glyphicon-calendar"></span> 今日交易额（元）</h5>
-		<h1>20000.00</h1>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" style="background:#f0ad4e; color:#FFF;">
-        <h5><span class="glyphicon glyphicon-usd"></span> 总交易额（元）</h5>
-		<h1>95300000.00</h1>
-        </div>
-         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" style="background:#428bca; color:#fff;">
-        <h5><span class="glyphicon glyphicon-time"></span> 近一周交易额（元）</h5>
-		<h1>1240052.00</h1>
-        </div>
-         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" style="background:#5bc0de; color:#fff;">
-        <h5><span class="glyphicon glyphicon-time"></span> 近一月交易额（元）</h5>
-		<h1>3242452.00</h1>
-        </div>
-		<div class="col-xs-12">
-        <h5><span class="glyphicon glyphicon-signal"></span> 历史交易曲线图</h5>
-		<div id="graph"></div>
-        </div>
-        
-         <div>
-          <table class="table table-hover" id="list-table">
-            <thead>
-            <tr><td colspan="3"><span class="glyphicon glyphicon-search"></span> 终端交易记录</td></tr>
-            <tr><td colspan="3">
-            <form class="form-inline" role="form">
-            <div class="form-group">
-            <label class="control-label" for="s1"><span class="glyphicon glyphicon-calendar"></span> 开始日期</label>
-<input id="s1" type="date" class="form-control" placeholder="开始日期"></div>
-<div class="form-group"><label class="control-label" for="s2"><span class="glyphicon glyphicon-calendar"></span> 结束日期</label> <input id="s2" type="date" class="form-control" placeholder="结束日期"></div>
-<button id="gosearch" class="btn btn-primary" type="button"> <span class="glyphicon glyphicon-search"></span> 查询交易记录</button></form></td>
-            </tr>
-            <tr>
-            <th>交易编号</th>
-            <th>交易金额</th>
-            <th>操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="parent" id="row1">
-            <td>D23423423123123213</td>
-            <td>125.00</td>
-            <td><a>详细</a></td>
-            </tr>
-            <tr class="child-row1">
-            <td colspan="3">
-            交易编号：D23423423123123213<br>
-            交易金额：125.00<br>
-            交易时间：2014-12-25<br>
-            交易事件：购买产品0001<br>
-            交易状态：完成<br>
-            交易方式：现金<br>
-            购买用户：匿名帐户<br>
-            来自终端：A232132<br>
-            </td>
-            </tr>
-            
-            <tr class="parent" id="row2">
-            <td>D23423423123123213</td>
-            <td>222.00</td>
-            <td><a>详细</a></td>
-            </tr>
-            <tr class="child-row2">
-            <td colspan="3">
-            交易编号：D23423423123123213<br>
-            交易金额：222.00<br>
-            交易时间：2014-12-25<br>
-            交易事件：购买产品0001<br>
-            交易状态：完成<br>
-            交易方式：现金<br>
-            购买用户：匿名帐户<br>
-            来自终端：A232132<br>
-            </td>
-            </tr>
-            
-            <tr class="parent" id="row3">
-            <td>E22223423123123213</td>
-            <td>445.00</td>
-            <td><a>详细</a></td>
-            </tr>
-            <tr class="child-row3">
-            <td colspan="3">
-            交易编号：E22223423123123213<br>
-            交易金额：445.00<br>
-            交易时间：2014-12-25<br>
-            交易事件：购买产品0001<br>
-            交易状态：完成<br>
-            交易方式：现金<br>
-            购买用户：匿名帐户<br>
-            来自终端：A232132<br>
-            </td>
-            </tr>
-            
-            <tr class="parent" id="row4">
-            <td>D33333423123123213</td>
-            <td>525.00</td>
-            <td><a>详细</a></td>
-            </tr>
-            <tr class="child-row4">
-            <td colspan="3">
-            交易编号：D33333423123123213<br>
-            交易金额：525.00<br>
-            交易时间：2014-12-25<br>
-            交易事件：购买产品0001<br>
-            交易状态：完成<br>
-            交易方式：现金<br>
-            购买用户：匿名帐户<br>
-            来自终端：A232132<br>
-            </td>
-            </tr>
-            
-            <tr class="parent" id="row5">
-            <td>D44443423123123213</td>
-            <td>112.00</td>
-            <td><a>详细</a></td>
-            </tr>
-            <tr class="child-row5">
-            <td colspan="3">
-            交易编号：D44443423123123213<br>
-            交易金额：112.00<br>
-            交易时间：2014-12-25<br>
-            交易事件：购买产品0001<br>
-            交易状态：完成<br>
-            交易方式：现金<br>
-            购买用户：匿名帐户<br>
-            来自终端：A232132<br>
-            </td>
-            </tr>
-           
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="3"><button id="morepage" type="button" class="btn btn-primary btn-block"><span id="loading"></span>加载更多</button></td>
-              </tr>
-            </tfoot>
+        <div class="panel-body">
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" style="background:#d9534f; color:#FFF;">
+            <h5><span class="glyphicon glyphicon-calendar"></span> 今日交易额（元）</h5>
+            <h1>20000.00</h1>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" style="background:#f0ad4e; color:#FFF;">
+            <h5><span class="glyphicon glyphicon-usd"></span> 总交易额（元）</h5>
+            <h1>95300000.00</h1>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" style="background:#428bca; color:#fff;">
+            <h5><span class="glyphicon glyphicon-time"></span> 近一周交易额（元）</h5>
+            <h1>1240052.00</h1>
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3" style="background:#5bc0de; color:#fff;">
+            <h5><span class="glyphicon glyphicon-time"></span> 近一月交易额（元）</h5>
+            <h1>3242452.00</h1>
+          </div>
+          <div class="col-xs-12">
+            <h5><span class="glyphicon glyphicon-signal"></span> 历史交易曲线图</h5>
+            <div id="graph"></div>
+          </div>
+          <div>
+            <table class="table table-hover" id="list-table">
+              <thead>
+                <tr>
+                  <td colspan="3"><span class="glyphicon glyphicon-search"></span> 终端交易记录</td>
+                </tr>
+                <tr>
+                  <td colspan="3"><form class="form-inline" role="form">
+                      <div class="form-group">
+                        <label class="control-label" for="s1"><span class="glyphicon glyphicon-calendar"></span> 开始日期</label>
+                        <input id="s1" type="date" class="form-control" placeholder="开始日期">
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label" for="s2"><span class="glyphicon glyphicon-calendar"></span> 结束日期</label>
+                        <input id="s2" type="date" class="form-control" placeholder="结束日期">
+                      </div>
+                      <button id="gosearch" class="btn btn-primary" type="button"> <span class="glyphicon glyphicon-search"></span> 查询交易记录</button>
+                    </form></td>
+                </tr>
+                <tr>
+                  <th>交易编号</th>
+                  <th>交易金额</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="parent" id="row1">
+                  <td>D23423423123123213</td>
+                  <td>125.00</td>
+                  <td><a>详细</a></td>
+                </tr>
+                <tr class="child-row1">
+                  <td colspan="3"> 交易编号：D23423423123123213<br>
+                    交易金额：125.00<br>
+                    交易时间：2014-12-25<br>
+                    交易事件：购买产品0001<br>
+                    交易状态：完成<br>
+                    交易方式：现金<br>
+                    购买用户：匿名帐户<br>
+                    来自终端：A232132<br></td>
+                </tr>
+                <tr class="parent" id="row2">
+                  <td>D23423423123123213</td>
+                  <td>222.00</td>
+                  <td><a>详细</a></td>
+                </tr>
+                <tr class="child-row2">
+                  <td colspan="3"> 交易编号：D23423423123123213<br>
+                    交易金额：222.00<br>
+                    交易时间：2014-12-25<br>
+                    交易事件：购买产品0001<br>
+                    交易状态：完成<br>
+                    交易方式：现金<br>
+                    购买用户：匿名帐户<br>
+                    来自终端：A232132<br></td>
+                </tr>
+                <tr class="parent" id="row3">
+                  <td>E22223423123123213</td>
+                  <td>445.00</td>
+                  <td><a>详细</a></td>
+                </tr>
+                <tr class="child-row3">
+                  <td colspan="3"> 交易编号：E22223423123123213<br>
+                    交易金额：445.00<br>
+                    交易时间：2014-12-25<br>
+                    交易事件：购买产品0001<br>
+                    交易状态：完成<br>
+                    交易方式：现金<br>
+                    购买用户：匿名帐户<br>
+                    来自终端：A232132<br></td>
+                </tr>
+                <tr class="parent" id="row4">
+                  <td>D33333423123123213</td>
+                  <td>525.00</td>
+                  <td><a>详细</a></td>
+                </tr>
+                <tr class="child-row4">
+                  <td colspan="3"> 交易编号：D33333423123123213<br>
+                    交易金额：525.00<br>
+                    交易时间：2014-12-25<br>
+                    交易事件：购买产品0001<br>
+                    交易状态：完成<br>
+                    交易方式：现金<br>
+                    购买用户：匿名帐户<br>
+                    来自终端：A232132<br></td>
+                </tr>
+                <tr class="parent" id="row5">
+                  <td>D44443423123123213</td>
+                  <td>112.00</td>
+                  <td><a>详细</a></td>
+                </tr>
+                <tr class="child-row5">
+                  <td colspan="3"> 交易编号：D44443423123123213<br>
+                    交易金额：112.00<br>
+                    交易时间：2014-12-25<br>
+                    交易事件：购买产品0001<br>
+                    交易状态：完成<br>
+                    交易方式：现金<br>
+                    购买用户：匿名帐户<br>
+                    来自终端：A232132<br></td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="3"><button id="morepage" type="button" class="btn btn-primary btn-block"><span id="loading"></span>加载更多</button></td>
+                </tr>
+              </tfoot>
             </table>
-            </div>
+          </div>
         </div>
-       
-
       </div>
     </div>
   </div>
 </div>
-
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <!-- Placed at the end of the document so the pages load faster --> 
@@ -230,9 +225,9 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> 
 <script src="dist/js/jquery.cookie.js"></script> 
 <script src="dist/js/bgchange.js"></script> 
-<script src="dist/js/raphael-min.js"></script>
-<script src="dist/js/morris.js"></script>
-<script src="dist/js/prettify.min.js"></script>
+<script src="dist/js/raphael-min.js"></script> 
+<script src="dist/js/morris.js"></script> 
+<script src="dist/js/prettify.min.js"></script> 
 <script>
 $(function () {
   var day_data = [

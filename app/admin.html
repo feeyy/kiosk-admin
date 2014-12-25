@@ -1,11 +1,15 @@
-﻿<!DOCTYPE html>
+﻿<!--后台权限管理-后台页面代码 -->
+<!--开发者：陈@大少 QQ：820094076  -->
+<!--代码地址：https://github.com/feeyy/kiosk-admin -->
+<!--首次编写时间：2014-10-25  -->
+
+<!DOCTYPE html>
 <html lang="zh-cn">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1 ,maximum-scale=1, user-scalable=no">
 <title>自助终端后台管理系统</title>
-
 <!-- Bootstrap -->
 <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="dist/css/dashboard.css" rel="stylesheet">
@@ -20,7 +24,9 @@
     <![endif]-->
 </head>
 <body class="table-hover">
+<!--背景图片 -->
 <div id="web_bg" style="position:absolute; width:100%; height:100%; z-index:-1"> <img style="position:fixed;" src="dist/img/bg2.jpg" height="100%" width="100%" /> </div>
+<!--顶部菜单 -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header"> <a href="index.html"><span class="navbar-brand" style="color:#FFF;"><span class="glyphicon glyphicon-chevron-left"></span> 返回</span></a>
@@ -53,8 +59,10 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
     </div>
   </div>
 </nav>
+<!--主体 -->
 <div class="container-fluid">
-  <div class="row">
+  <div class="row"> 
+    <!--左边菜单 -->
     <div class="col-sm-3 col-md-2 sidebar">
       <ul class="nav nav-sidebar" >
         <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> 系统管理首页</a></li>
@@ -66,6 +74,7 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
         <li><a href="help.html"><span class="glyphicon glyphicon-question-sign"></span> 使用帮助</a></li>
       </ul>
     </div>
+    <!--右边内容 -->
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <div class="panel panel-primary"> 
         <!-- Default panel contents -->
@@ -250,36 +259,36 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
                   <div class="form-group">
                     <label class="col-sm-3 control-label">管理功能</label>
                     <div class="col-sm-8">
-                     <div class="list">
-                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 系统参数设置</div>
-                    <div class="col-xs-6 text-right">
-                      <input type="checkbox" id="go1" checked>
-                    </div>
-                  </div>
-                  <div class="list">
-                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 后台权限管理</div>
-                    <div class="col-xs-6 text-right">
-                      <input type="checkbox" id="go2" checked>
-                    </div>
-                  </div>
-                  <div class="list">
-                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 会员帐户管理</div>
-                    <div class="col-xs-6 text-right">
-                      <input type="checkbox" id="go3" checked>
-                    </div>
-                  </div>
-                  <div class="list">
-                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 终端交易管理</div>
-                    <div class="col-xs-6 text-right">
-                      <input type="checkbox" id="go4" checked>
-                    </div>
-                  </div>
-                  <div class="list">
-                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 终端设备管理</div>
-                    <div class="col-xs-6 text-right">
-                      <input type="checkbox" id="go5" checked>
-                    </div>
-                  </div>
+                      <div class="list">
+                        <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 系统参数设置</div>
+                        <div class="col-xs-6 text-right">
+                          <input type="checkbox" id="go1" checked>
+                        </div>
+                      </div>
+                      <div class="list">
+                        <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 后台权限管理</div>
+                        <div class="col-xs-6 text-right">
+                          <input type="checkbox" id="go2" checked>
+                        </div>
+                      </div>
+                      <div class="list">
+                        <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 会员帐户管理</div>
+                        <div class="col-xs-6 text-right">
+                          <input type="checkbox" id="go3" checked>
+                        </div>
+                      </div>
+                      <div class="list">
+                        <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 终端交易管理</div>
+                        <div class="col-xs-6 text-right">
+                          <input type="checkbox" id="go4" checked>
+                        </div>
+                      </div>
+                      <div class="list">
+                        <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 终端设备管理</div>
+                        <div class="col-xs-6 text-right">
+                          <input type="checkbox" id="go5" checked>
+                        </div>
+                      </div>
                       <p class="help-block">该账号具备的管理功能</p>
                     </div>
                   </div>
@@ -366,38 +375,37 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
             <div class="form-group">
               <label class="col-sm-3 control-label">管理功能</label>
               <div class="col-sm-8">
-              
-              		<div class="list">
-                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 系统参数设置</div>
-                    <div class="col-xs-6 text-right">
-                      <input type="checkbox" id="go11" checked>
-                    </div>
+                <div class="list">
+                  <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 系统参数设置</div>
+                  <div class="col-xs-6 text-right">
+                    <input type="checkbox" id="go11" checked>
                   </div>
-                  <div class="list">
-                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 后台权限管理</div>
-                    <div class="col-xs-6 text-right">
-                      <input type="checkbox" id="go22" checked>
-                    </div>
+                </div>
+                <div class="list">
+                  <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 后台权限管理</div>
+                  <div class="col-xs-6 text-right">
+                    <input type="checkbox" id="go22" checked>
                   </div>
-                  <div class="list">
-                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 会员帐户管理</div>
-                    <div class="col-xs-6 text-right">
-                      <input type="checkbox" id="go33" checked>
-                    </div>
+                </div>
+                <div class="list">
+                  <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 会员帐户管理</div>
+                  <div class="col-xs-6 text-right">
+                    <input type="checkbox" id="go33" checked>
                   </div>
-                  <div class="list">
-                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 终端交易管理</div>
-                    <div class="col-xs-6 text-right">
-                      <input type="checkbox" id="go44" checked>
-                    </div>
+                </div>
+                <div class="list">
+                  <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 终端交易管理</div>
+                  <div class="col-xs-6 text-right">
+                    <input type="checkbox" id="go44" checked>
                   </div>
-                  <div class="list">
-                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 终端设备管理</div>
-                    <div class="col-xs-6 text-right">
-                      <input type="checkbox" id="go55" checked>
-                    </div>
+                </div>
+                <div class="list">
+                  <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 终端设备管理</div>
+                  <div class="col-xs-6 text-right">
+                    <input type="checkbox" id="go55" checked>
                   </div>
-             </div>
+                </div>
+              </div>
             </div>
             <div class="form-group">
               <label class="col-sm-3 control-label">选择头像</label>

@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿<!--系统参数设置-后台页面代码 -->
+<!--开发者：陈@大少 QQ：820094076  -->
+<!--代码地址：https://github.com/feeyy/kiosk-admin -->
+<!--首次编写时间：2014-10-25  -->
+
+<!DOCTYPE html>
 <html lang="zh-cn">
 <head>
 <meta charset="utf-8">
@@ -20,7 +25,9 @@
     <![endif]-->
 </head>
 <body class="table-hover">
+<!--背景图片 -->
 <div id="web_bg" style="position:absolute; width:100%; height:100%; z-index:-1"> <img style="position:fixed;" src="dist/img/bg2.jpg" height="100%" width="100%" /> </div>
+<!--顶部菜单 -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header"> <a href="index.html"><span class="navbar-brand" style="color:#FFF;"><span class="glyphicon glyphicon-chevron-left"></span> 返回</span></a>
@@ -53,8 +60,10 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
     </div>
   </div>
 </nav>
+<!--主体 -->
 <div class="container-fluid">
-  <div class="row">
+  <div class="row"> 
+    <!--左边菜单 -->
     <div class="col-sm-3 col-md-2 sidebar">
       <ul class="nav nav-sidebar" >
         <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> 系统管理首页</a></li>
@@ -66,6 +75,7 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
         <li><a href="help.html"><span class="glyphicon glyphicon-question-sign"></span> 使用帮助</a></li>
       </ul>
     </div>
+    <!--右边内容 -->
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <div class="panel panel-primary" style="clear:both"> 
         <!-- Default panel contents -->

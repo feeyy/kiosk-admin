@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿<!--会员账户管理-后台页面代码 -->
+<!--开发者：陈@大少 QQ：820094076  -->
+<!--代码地址：https://github.com/feeyy/kiosk-admin -->
+<!--首次编写时间：2014-10-25  -->
+
+<!DOCTYPE html>
 <html lang="zh-cn">
 <head>
 <meta charset="utf-8">
@@ -19,16 +24,16 @@
     <![endif]-->
 </head>
 <body class="table-hover">
+<!--背景图片 -->
 <div id="web_bg" style="position:absolute; width:100%; height:100%; z-index:-1"> <img style="position:fixed;" src="dist/img/bg2.jpg" height="100%" width="100%" /> </div>
+<!--顶部菜单 -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container-fluid">
-    <div class="navbar-header">
-     <a href="index.html"><span class="navbar-brand" style="color:#FFF;"><span class="glyphicon glyphicon-chevron-left"></span>  返回</span></a>
+    <div class="navbar-header"> <a href="index.html"><span class="navbar-brand" style="color:#FFF;"><span class="glyphicon glyphicon-chevron-left"></span> 返回</span></a>
       <button class="navbar-toggle collapsed" 
 aria-expanded="false" aria-controls="navbar" type="button" data-toggle="collapse" 
 data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-
-      </div>
+    </div>
     <div class="navbar-collapse collapse" id="navbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> 系统管理首页</a></li>
@@ -54,8 +59,10 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
     </div>
   </div>
 </nav>
+<!--主体 -->
 <div class="container-fluid">
-  <div class="row">
+  <div class="row"> 
+    <!--左边菜单 -->
     <div class="col-sm-3 col-md-2 sidebar">
       <ul class="nav nav-sidebar" >
         <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> 系统管理首页</a></li>
@@ -67,6 +74,7 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
         <li><a href="help.html"><span class="glyphicon glyphicon-question-sign"></span> 使用帮助</a></li>
       </ul>
     </div>
+    <!--右边内容 -->
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <div class="panel panel-primary" style="clear:both"> 
         <!-- Default panel contents -->
@@ -75,18 +83,15 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
         <div class="table-responsive">
           <table class="table table-hover" id="list-table">
             <thead>
-            <tr>
-            <td colspan="3">
-            <div class="input-group" style="margin:8px;">
-            <input id="search" type="text" class="form-control" placeholder="输入姓名">
-            <span class="input-group-btn">
-            <button id="gosearch" class="btn btn-primary" type="button"> <span class="glyphicon glyphicon-search"></span> 搜索 </button>
-            <button id="addnew" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-file"></span><span class="hidden-xs"> 新建</span></button>
-            <button onClick="del('all')" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
-            </span>
-            </div>
-            </td>
-            </tr>
+              <tr>
+                <td colspan="3"><div class="input-group" style="margin:8px;">
+                    <input id="search" type="text" class="form-control" placeholder="输入姓名">
+                    <span class="input-group-btn">
+                    <button id="gosearch" class="btn btn-primary" type="button"> <span class="glyphicon glyphicon-search"></span> 搜索 </button>
+                    <button id="addnew" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-file"></span><span class="hidden-xs"> 新建</span></button>
+                    <button onClick="del('all')" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
+                    </span> </div></td>
+              </tr>
               <tr>
                 <th align="center" valign="middle"><div style="text-align:center;">
                     <input id="checkall" type="checkbox"/>
@@ -126,13 +131,9 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
         <div id="modal-neir">
           <form id="form1" class="form-horizontal" role="form">
             <div id="touxiang" style="text-align:center;"><img src="dist/img/people.png" alt="" class="img-circle" width="128" height="128" style="border:#fff solid 5px;">
-            <div id="shuxing" style="margin:10px 0px 10px 0px; clear:both; ">
-           <span class="glyphicon glyphicon-heart-empty"></span> 积分：1000，<span class="glyphicon glyphicon-euro"></span> 余额：0.00<br>
-             <span class="glyphicon glyphicon-credit-card"></span> 充值记录：<a href="#">0</a>条，<span class="glyphicon glyphicon-shopping-cart"></span> 消费记录：<a href="#">0</a>条</div>
-             
-             </div>
-           
-           
+              <div id="shuxing" style="margin:10px 0px 10px 0px; clear:both; "> <span class="glyphicon glyphicon-heart-empty"></span> 积分：1000，<span class="glyphicon glyphicon-euro"></span> 余额：0.00<br>
+                <span class="glyphicon glyphicon-credit-card"></span> 充值记录：<a href="#">0</a>条，<span class="glyphicon glyphicon-shopping-cart"></span> 消费记录：<a href="#">0</a>条</div>
+            </div>
             <div class="form-group">
               <label for="sfName" class="col-sm-3 control-label">姓名</label>
               <div class="col-sm-6">
@@ -140,70 +141,60 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
                 <input type="hidden" id="ID" >
               </div>
             </div>
-            
             <div class="form-group">
               <label for="pwd" class="col-sm-3 control-label">登录密码</label>
               <div class="col-sm-6">
                 <input type="password" class="form-control" id="pwd" placeholder="必填项">
               </div>
             </div>
-            
-              <div class="form-group">
-                <label for="tel" class="col-sm-3 control-label">手机号码</label>
-                <div class="col-sm-6">
-                  <input type="tel" class="form-control" id="tel" placeholder="必填项">
-                </div>
+            <div class="form-group">
+              <label for="tel" class="col-sm-3 control-label">手机号码</label>
+              <div class="col-sm-6">
+                <input type="tel" class="form-control" id="tel" placeholder="必填项">
               </div>
-              
-              <div class="form-group">
-                <label for="email" class="col-sm-3 control-label">电子邮箱</label>
-                <div class="col-sm-8">
-                  <input type="email" class="form-control" id="email" placeholder="必填项">
-                </div>
+            </div>
+            <div class="form-group">
+              <label for="email" class="col-sm-3 control-label">电子邮箱</label>
+              <div class="col-sm-8">
+                <input type="email" class="form-control" id="email" placeholder="必填项">
               </div>
-              
-              <div class="form-group">
-                <label for="sfNumber" class="col-sm-3 control-label">身份证编号</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="sfNumber" placeholder="必填项" >
-                </div>
+            </div>
+            <div class="form-group">
+              <label for="sfNumber" class="col-sm-3 control-label">身份证编号</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="sfNumber" placeholder="必填项" >
               </div>
-              
-              <div class="form-group">
-                <label for="sfAddress" class="col-sm-3 control-label">家庭住址</label>
-                <div class="col-sm-8">
-                  <input type="text" class="form-control" id="sfAddress" placeholder="可填项" >
-                </div>
+            </div>
+            <div class="form-group">
+              <label for="sfAddress" class="col-sm-3 control-label">家庭住址</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="sfAddress" placeholder="可填项" >
               </div>
-              
-              <div class="form-group">
-                <label for="sfSex" class="col-sm-3 control-label">性别</label>
-                <div class="col-sm-4">
-                  <input type="text" class="form-control" id="sfSex" placeholder="可填项">
-                </div>
+            </div>
+            <div class="form-group">
+              <label for="sfSex" class="col-sm-3 control-label">性别</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="sfSex" placeholder="可填项">
               </div>
-              
-              <div class="form-group">
-                <label for="sfNation" class="col-sm-3 control-label">民族</label>
-                <div class="col-sm-4">
-                  <input type="text" class="form-control" id="sfNation" placeholder="可填项" >
-                </div>
+            </div>
+            <div class="form-group">
+              <label for="sfNation" class="col-sm-3 control-label">民族</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="sfNation" placeholder="可填项" >
               </div>
-              
-              <div class="form-group">
-                <label for="sfBirthday" class="col-sm-3 control-label">生日</label>
-                <div class="col-sm-4">
-                  <input type="date" class="form-control" id="sfBirthday" placeholder="可填项" >
-                </div>
+            </div>
+            <div class="form-group">
+              <label for="sfBirthday" class="col-sm-3 control-label">生日</label>
+              <div class="col-sm-4">
+                <input type="date" class="form-control" id="sfBirthday" placeholder="可填项" >
               </div>
-              
-              <div class="form-group">
-                <label for="fTemplate" class="col-sm-3 control-label">指纹特征码</label>
-                <div class="col-sm-8">
-                  <textarea class="form-control" id="fTemplate" rows="3" placeholder="可填项"></textarea>
-                </div>
+            </div>
+            <div class="form-group">
+              <label for="fTemplate" class="col-sm-3 control-label">指纹特征码</label>
+              <div class="col-sm-8">
+                <textarea class="form-control" id="fTemplate" rows="3" placeholder="可填项"></textarea>
               </div>
-         
+            </div>
           </form>
         </div>
       </div>
