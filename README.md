@@ -16,6 +16,7 @@ kiosk-admin
 
 开发：陈大少
 QQ：820094076
+
 ===========
 
 the management system of kiosk
