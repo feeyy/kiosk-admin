@@ -103,10 +103,10 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
             <tr><td colspan="3">
             <form class="form-inline" role="form">
             <div class="form-group">
-            <label class="sr-only" for="s1">开始日期</label>
+            <label class="control-label" for="s1"><span class="glyphicon glyphicon-calendar"></span> 开始日期</label>
 <input id="s1" type="date" class="form-control" placeholder="开始日期"></div>
-<div class="form-group"><label class="sr-only" for="s2">结束日期</label><input id="s2" type="date" class="form-control" placeholder="结束日期"></div>
-<button id="gosearch" class="btn btn-primary" type="button"> <span class="glyphicon glyphicon-search"></span> 查询</button></form></td>
+<div class="form-group"><label class="control-label" for="s2"><span class="glyphicon glyphicon-calendar"></span> 结束日期</label> <input id="s2" type="date" class="form-control" placeholder="结束日期"></div>
+<button id="gosearch" class="btn btn-primary" type="button"> <span class="glyphicon glyphicon-search"></span> 查询交易记录</button></form></td>
             </tr>
             <tr>
             <th>交易编号</th>
@@ -236,21 +236,21 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
 <script>
 $(function () {
   var day_data = [
-  {"period": "2014-10-01", "licensed": 3007},
-  {"period": "2014-10-02", "licensed": 1351},
-  {"period": "2014-10-03", "licensed": 6269},
-  {"period": "2014-10-04", "licensed": 3171},
-  {"period": "2014-10-05", "licensed": 3201},
-  {"period": "2014-10-06", "licensed": 3201},
-  {"period": "2014-10-07", "licensed": 20000}
+  {"日期": "2014-10-01", "交易额": 3007},
+  {"日期": "2014-10-02", "交易额": 1351},
+  {"日期": "2014-10-03", "交易额": 6269},
+  {"日期": "2014-10-04", "交易额": 3171},
+  {"日期": "2014-10-05", "交易额": 3201},
+  {"日期": "2014-10-06", "交易额": 3201},
+  {"日期": "2014-10-07", "交易额": 20000}
 ];
 Morris.Area({
   element: 'graph',
   behaveLikeLine: true,
   data: day_data,
-  xkey: ['period'],
-  ykeys: ['licensed'],
-  labels: ['licensed'],
+  xkey: ['日期'],
+  ykeys: ['交易额'],
+  labels: ['交易额'],
   resize: true
 });
  $('tr.parent').click(function(){   // 获取所谓的父行  

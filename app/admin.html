@@ -9,6 +9,7 @@
 <!-- Bootstrap -->
 <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="dist/css/dashboard.css" rel="stylesheet">
+<link href="dist/css/bootstrap-switch.css" rel="stylesheet">
 <!--[if lt IE 9]><script src="dist/js/ie8-responsive-file-warning.js"></script><![endif]-->
 <script src="dist/js/ie-emulation-modes-warning.js"></script>
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -53,286 +54,441 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
   </div>
 </nav>
 <div class="container-fluid">
-<div class="row">
-  <div class="col-sm-3 col-md-2 sidebar">
-    <ul class="nav nav-sidebar" >
-      <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> 系统管理首页</a></li>
-      <li><a href="config.html"><span class="glyphicon glyphicon-cog"></span> 系统参数设置</a></li>
-      <li class="active"><a href="admin.html"><span class="glyphicon glyphicon-lock"></span> 后台权限管理</a></li>
-      <li><a href="users.html"><span class="glyphicon glyphicon-user"></span> 会员帐户管理</a></li>
-      <li><a href="cash.html"><span class="glyphicon glyphicon-usd"></span> 终端交易管理</a></li>
-      <li><a href="device.html"><span class="glyphicon glyphicon-hdd"></span> 终端设备管理</a></li>
-      <li><a href="help.html"><span class="glyphicon glyphicon-question-sign"></span> 使用帮助</a></li>
-    </ul>
-  </div>
-  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-    <div class="panel panel-primary"> 
-      <!-- Default panel contents -->
-      <div class="panel-heading"><span class="glyphicon glyphicon-lock"></span> 后台权限管理</a></div>
-      <div class="panel-body">
-        <div style="padding:10px;">
-          <ul id="myTab" class="nav nav-tabs">
-            <li class="active"> <a href="#role" data-toggle="tab"><span class="glyphicon glyphicon-user"></span> 账号管理 </a> </li>
-            <li><a href="#admin" data-toggle="tab"><span class="glyphicon glyphicon-lock"></span> 权限管理</a></li>
-            <li class="dropdown"> <a href="#" id="myTabDrop1" class="dropdown-toggle" 
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <ul class="nav nav-sidebar" >
+        <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> 系统管理首页</a></li>
+        <li><a href="config.html"><span class="glyphicon glyphicon-cog"></span> 系统参数设置</a></li>
+        <li class="active"><a href="admin.html"><span class="glyphicon glyphicon-lock"></span> 后台权限管理</a></li>
+        <li><a href="users.html"><span class="glyphicon glyphicon-user"></span> 会员帐户管理</a></li>
+        <li><a href="cash.html"><span class="glyphicon glyphicon-usd"></span> 终端交易管理</a></li>
+        <li><a href="device.html"><span class="glyphicon glyphicon-hdd"></span> 终端设备管理</a></li>
+        <li><a href="help.html"><span class="glyphicon glyphicon-question-sign"></span> 使用帮助</a></li>
+      </ul>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <div class="panel panel-primary"> 
+        <!-- Default panel contents -->
+        <div class="panel-heading"><span class="glyphicon glyphicon-lock"></span> 后台权限管理</a></div>
+        <div class="panel-body">
+          <div style="padding:10px;">
+            <ul id="myTab" class="nav nav-tabs">
+              <li class="active"> <a href="#role" data-toggle="tab"><span class="glyphicon glyphicon-user"></span> 账号管理 </a> </li>
+              <li><a href="#admin" data-toggle="tab"><span class="glyphicon glyphicon-lock"></span> 权限管理</a></li>
+              <li class="dropdown"> <a href="#" id="myTabDrop1" class="dropdown-toggle" 
          data-toggle="dropdown"><span class="glyphicon glyphicon-pencil"></span> 添加 <b class="caret"></b> </a>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
-                <li><a href="#addrole" tabindex="-1" data-toggle="tab">添加账号</a></li>
-                <li><a href="#addadmin" tabindex="-1" data-toggle="tab">添加权限</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div id="myTabContent" class="tab-content">
-          <div class="tab-pane fade in active" id="role"> 
-            <!-- Table -->
-            <div class="table-responsive">
-              <table class="table table-hover" id="list-table1">
-                <thead>
-                  <tr>
-                    <th style="text-align:left"><span class="glyphicon glyphicon-circle-arrow-right"></span> 管理者账号</th>
-                    <th style="text-align:right"><span class="glyphicon glyphicon-wrench"></span> 管理</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td align="left" valign="middle"><div class="media"> <a class="media-left" href="#"><img width="50" height="50" src="dist/img/tpic/1.png" alt="..." class="img-circle"></a>
-                        <div class="media-body">
-                          <h4 class="media-heading hidden-xs">admin</h4>
-                          <h4 class="visible-xs-block" style="line-height:30px;">admin</h4>
-                          <span class="hidden-xs"><span class="label label-danger">系统参数设置</span> <span class="label label-danger">后台权限管理</span> <span class="label label-danger">会员帐户管理</span></span></div>
-                      </div></td>
-                    <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
-                        <button onClick="" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
-                        <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
-                      </div></td>
-                  </tr>
-                  <tr>
-                    <td align="left" valign="middle"><div class="media"> <a class="media-left" href="#"><img width="50" height="50" src="dist/img/tpic/2.png" alt="..." class="img-circle"></a>
-                        <div class="media-body">
-                          <h4 class="media-heading hidden-xs">cc</h4>
-                          <h4 class="visible-xs-block" style="line-height:30px;">cc</h4>
-                          <span class="hidden-xs"><span class="label label-primary">终端交易管理</span> <span class="label label-primary">终端设备管理</span></span></div>
-                      </div></td>
-                    <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
-                        <button onClick="" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
-                        <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
-                      </div></td>
-                  </tr>
-                  <tr>
-                    <td align="left" valign="middle"><div class="media"> <a class="media-left" href="#"><img width="50" height="50" src="dist/img/tpic/3.png" alt="..." class="img-circle"></a>
-                        <div class="media-body">
-                          <h4 class="media-heading hidden-xs">luce</h4>
-                          <h4 class="visible-xs-block" style="line-height:30px;">luce</h4>
-                          <span class="hidden-xs"><span class="label label-primary">终端交易管理</span> <span class="label label-primary">终端设备管理</span></span></div>
-                      </div></td>
-                    <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
-                        <button onClick="" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
-                        <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
-                      </div></td>
-                  </tr>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
+                  <li><a href="#addrole" tabindex="-1" data-toggle="tab">添加账号</a></li>
+                  <li><a href="#addadmin" tabindex="-1" data-toggle="tab">添加权限</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="role"> 
+              <!-- Table -->
+              <div class="table-responsive">
+                <table class="table table-hover" id="list-table1">
+                  <thead>
                     <tr>
-                    <td align="left" valign="middle"><div class="media"> <a class="media-left" href="#"><img width="50" height="50" src="dist/img/tpic/4.png" alt="..." class="img-circle"></a>
-                        <div class="media-body">
-                          <h4 class="media-heading hidden-xs">jack</h4>
-                          <h4 class="visible-xs-block" style="line-height:30px;">jack</h4>
-                          <span class="hidden-xs"><span class="label label-primary">终端交易管理</span> <span class="label label-primary">终端设备管理</span></span></div>
-                      </div></td>
-                    <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
-                        <button onClick="" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
-                        <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
-                      </div></td>
-                  </tr>
+                      <th style="text-align:left"><span class="glyphicon glyphicon-circle-arrow-right"></span> 管理者账号</th>
+                      <th style="text-align:right"><span class="glyphicon glyphicon-wrench"></span> 管理</th>
+                    </tr>
+                  </thead>
+                  <tbody>
                     <tr>
-                    <td align="left" valign="middle"><div class="media"> <a class="media-left" href="#"><img width="50" height="50" src="dist/img/tpic/5.png" alt="..." class="img-circle"></a>
-                        <div class="media-body">
-                          <h4 class="media-heading hidden-xs">chen</h4>
-                          <h4 class="visible-xs-block" style="line-height:30px;">chen</h4>
-                          <span class="hidden-xs"><span class="label label-danger">系统参数设置</span> <span class="label label-danger">后台权限管理</span> <span class="label label-danger">会员帐户管理</span> <span class="label label-primary">终端交易管理</span> <span class="label label-primary">终端设备管理</span></span></div>
-                      </div></td>
-                    <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
-                        <button onClick="" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
-                        <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
-                      </div></td>
-                  </tr>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <td colspan="4"><button id="morepage" type="button" class="btn btn-primary btn-block"><span id="loading">加载更多</span></button></td>
-                  </tr>
-                </tfoot>
-              </table>
+                      <td align="left" valign="middle"><div class="media"> <a class="media-left" href="#"><img width="50" height="50" src="dist/img/tpic/1.png" alt="..." class="img-circle"></a>
+                          <div class="media-body">
+                            <h4 class="media-heading hidden-xs">admin</h4>
+                            <h4 class="visible-xs-block" style="line-height:30px;">admin</h4>
+                            <span class="hidden-xs"><span class="label label-danger">系统参数设置</span> <span class="label label-danger">后台权限管理</span> <span class="label label-danger">会员帐户管理</span></span></div>
+                        </div></td>
+                      <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
+                          <button onClick="view('role','1')" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
+                          <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
+                        </div></td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="middle"><div class="media"> <a class="media-left" href="#"><img width="50" height="50" src="dist/img/tpic/2.png" alt="..." class="img-circle"></a>
+                          <div class="media-body">
+                            <h4 class="media-heading hidden-xs">cc</h4>
+                            <h4 class="visible-xs-block" style="line-height:30px;">cc</h4>
+                            <span class="hidden-xs"><span class="label label-primary">终端交易管理</span> <span class="label label-primary">终端设备管理</span></span></div>
+                        </div></td>
+                      <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
+                          <button onClick="view('role','2')" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
+                          <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
+                        </div></td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="middle"><div class="media"> <a class="media-left" href="#"><img width="50" height="50" src="dist/img/tpic/3.png" alt="..." class="img-circle"></a>
+                          <div class="media-body">
+                            <h4 class="media-heading hidden-xs">luce</h4>
+                            <h4 class="visible-xs-block" style="line-height:30px;">luce</h4>
+                            <span class="hidden-xs"><span class="label label-primary">终端交易管理</span> <span class="label label-primary">终端设备管理</span></span></div>
+                        </div></td>
+                      <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
+                          <button onClick="view('role','3')" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
+                          <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
+                        </div></td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="middle"><div class="media"> <a class="media-left" href="#"><img width="50" height="50" src="dist/img/tpic/4.png" alt="..." class="img-circle"></a>
+                          <div class="media-body">
+                            <h4 class="media-heading hidden-xs">jack</h4>
+                            <h4 class="visible-xs-block" style="line-height:30px;">jack</h4>
+                            <span class="hidden-xs"><span class="label label-primary">终端交易管理</span> <span class="label label-primary">终端设备管理</span></span></div>
+                        </div></td>
+                      <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
+                          <button onClick="view('role','4')" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
+                          <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
+                        </div></td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="middle"><div class="media"> <a class="media-left" href="#"><img width="50" height="50" src="dist/img/tpic/5.png" alt="..." class="img-circle"></a>
+                          <div class="media-body">
+                            <h4 class="media-heading hidden-xs">chen</h4>
+                            <h4 class="visible-xs-block" style="line-height:30px;">chen</h4>
+                            <span class="hidden-xs"><span class="label label-danger">系统参数设置</span> <span class="label label-danger">后台权限管理</span> <span class="label label-danger">会员帐户管理</span> <span class="label label-primary">终端交易管理</span> <span class="label label-primary">终端设备管理</span></span></div>
+                        </div></td>
+                      <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
+                          <button onClick="view('role','5')" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
+                          <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
+                        </div></td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="4"><button id="morepage" type="button" class="btn btn-primary btn-block"><span id="loading">加载更多</span></button></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
             </div>
-          </div>
-          <div class="tab-pane fade" id="admin"> 
-            <!-- Table -->
-            <div class="table-responsive">
-              <table class="table table-hover" id="list-table2">
-                <thead>
-                  <tr>
-                    <th style="text-align:left"><span class="glyphicon glyphicon-circle-arrow-right"></span> 功能名称</th>
-                    <th style="text-align:right"><span class="glyphicon glyphicon-wrench"></span> 管理</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td align="left" valign="middle"><div style="text-align:left; margin-top:15px;"><span class="glyphicon glyphicon-flag"></span> 系统参数设置</div></td>
-                    <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
-                        <button onClick="" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
-                        <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
-                      </div></td>
-                  </tr>
-                  <tr>
-                    <td align="left" valign="middle"><div style="text-align:left; margin-top:15px;"><span class="glyphicon glyphicon-flag"></span> 后台权限管理</div></td>
-                    <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
-                        <button onClick="" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
-                        <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
-                      </div></td>
-                  </tr>
-                  <tr>
-                    <td align="left" valign="middle"><div style="text-align:left; margin-top:15px;"><span class="glyphicon glyphicon-flag"></span> 会员帐户管理</div></td>
-                    <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
-                        <button onClick="" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
-                        <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
-                      </div></td>
-                  </tr>
-                  <tr>
-                    <td align="left" valign="middle"><div style="text-align:left; margin-top:15px;"><span class="glyphicon glyphicon-flag"></span> 终端交易管理</div></td>
-                    <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
-                        <button onClick="" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
-                        <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
-                      </div></td>
-                  </tr>
-                  <tr>
-                    <td align="left" valign="middle"><div style="text-align:left; margin-top:15px;"><span class="glyphicon glyphicon-flag"></span> 终端设备管理</div></td>
-                    <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
-                        <button onClick="" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
-                        <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
-                      </div></td>
-                  </tr>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <td colspan="4"><button id="morepage" type="button" class="btn btn-primary btn-block"><span id="loading">加载更多</span></button></td>
-                  </tr>
-                </tfoot>
-              </table>
+            <div class="tab-pane fade" id="admin"> 
+              <!-- Table -->
+              <div class="table-responsive">
+                <table class="table table-hover" id="list-table2">
+                  <thead>
+                    <tr>
+                      <th style="text-align:left"><span class="glyphicon glyphicon-circle-arrow-right"></span> 功能名称</th>
+                      <th style="text-align:right"><span class="glyphicon glyphicon-wrench"></span> 管理</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td align="left" valign="middle"><div style="text-align:left; margin-top:15px;"><span class="glyphicon glyphicon-flag"></span> 系统参数设置</div></td>
+                      <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
+                          <button onClick="view('admin','1')" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
+                          <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
+                        </div></td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="middle"><div style="text-align:left; margin-top:15px;"><span class="glyphicon glyphicon-flag"></span> 后台权限管理</div></td>
+                      <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
+                          <button onClick="view('admin','1')" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
+                          <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
+                        </div></td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="middle"><div style="text-align:left; margin-top:15px;"><span class="glyphicon glyphicon-flag"></span> 会员帐户管理</div></td>
+                      <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
+                          <button onClick="view('admin','1')" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
+                          <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
+                        </div></td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="middle"><div style="text-align:left; margin-top:15px;"><span class="glyphicon glyphicon-flag"></span> 终端交易管理</div></td>
+                      <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
+                          <button onClick="view('admin','1')" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
+                          <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
+                        </div></td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="middle"><div style="text-align:left; margin-top:15px;"><span class="glyphicon glyphicon-flag"></span> 终端设备管理</div></td>
+                      <td align="right" valign="middle"><div class="btn-group" style="line-height:50px; margin:8px;">
+                          <button onClick="view('admin','1')" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span><span class="hidden-xs"> 查看</span></button>
+                          <button onClick="del(this)" type="button" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span><span class="hidden-xs"> 删除</span></button>
+                        </div></td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="4"><button id="morepage" type="button" class="btn btn-primary btn-block"><span id="loading">加载更多</span></button></td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
             </div>
-          </div>
-          <div class="tab-pane fade" id="addrole">
-            <div class="col-xs-12">
-              <form id="form1" class="form-horizontal" role="form">
-                <div style="text-align:center; clear:both; padding:5px;">
-                  <h4><span class="glyphicon glyphicon-pencil"></span> 添加新管理者帐号</h4>
-                </div>
-                <div class="form-group">
-                  <label for="username" class="col-sm-3 control-label">登录帐户</label>
-                  <div class="col-sm-8">
-                    <input type="text" class="form-control" id="username" required placeholder="必填项">
-                    <p class="help-block">后台管理登录账号，全英文。</p>
+            <div class="tab-pane fade" id="addrole">
+              <div class="col-xs-12">
+                <form id="form1" class="form-horizontal" role="form">
+                  <div style="text-align:center; clear:both; padding:5px;">
+                    <h4><span class="glyphicon glyphicon-pencil"></span> 添加新管理者帐号</h4>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label for="password" class="col-sm-3 control-label">登录密码</label>
-                  <div class="col-sm-8">
-                    <input type="text" class="form-control" id="password" required placeholder="必填项">
-                    <p class="help-block">管理者登录密码，英文、数字。</p>
+                  <div class="form-group">
+                    <label for="username" class="col-sm-3 control-label">登录帐户</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="username" required placeholder="必填项">
+                      <p class="help-block">后台管理登录账号，全英文。</p>
+                    </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label for="password2" class="col-sm-3 control-label">确认密码</label>
-                  <div class="col-sm-8">
-                    <input type="text" class="form-control" id="password2" required placeholder="必填项">
-                    <p class="help-block">再次输入确认密码。</p>
+                  <div class="form-group">
+                    <label for="password" class="col-sm-3 control-label">登录密码</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="password" required placeholder="必填项">
+                      <p class="help-block">管理者登录密码，英文、数字。</p>
+                    </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-3 control-label">帐户具备的管理功能</label>
-                  <div class="col-sm-8">
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" id="go1" value="option1">
-                        系统参数设置 </label>
+                  <div class="form-group">
+                    <label for="password2" class="col-sm-3 control-label">确认密码</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="password2" required placeholder="必填项">
+                      <p class="help-block">再次输入确认密码。</p>
                     </div>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" id="go2" value="option2">
-                        后台权限管理 </label>
-                    </div>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" id="go3" value="option3">
-                        会员帐户管理 </label>
-                    </div>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" id="go4" value="option3">
-                        终端交易管理 </label>
-                    </div>
-                    <div class="checkbox">
-                      <label>
-                        <input type="checkbox" id="go5" value="option3">
-                        终端设备管理 </label>
-                    </div>
-                    <p class="help-block">允许用户可以选择的登录方式</p>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label for="sfName" class="col-sm-3 control-label">选择头像</label>
-                  <div class="col-sm-8">
-                    <select class="form-control">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                    </select>
-                    <p class="help-block">帐户头像图片选择</p>
+                  <div class="form-group">
+                    <label class="col-sm-3 control-label">管理功能</label>
+                    <div class="col-sm-8">
+                     <div class="list">
+                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 系统参数设置</div>
+                    <div class="col-xs-6 text-right">
+                      <input type="checkbox" id="go1" checked>
+                    </div>
                   </div>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block" >确认提交</button>
-              </form>
+                  <div class="list">
+                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 后台权限管理</div>
+                    <div class="col-xs-6 text-right">
+                      <input type="checkbox" id="go2" checked>
+                    </div>
+                  </div>
+                  <div class="list">
+                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 会员帐户管理</div>
+                    <div class="col-xs-6 text-right">
+                      <input type="checkbox" id="go3" checked>
+                    </div>
+                  </div>
+                  <div class="list">
+                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 终端交易管理</div>
+                    <div class="col-xs-6 text-right">
+                      <input type="checkbox" id="go4" checked>
+                    </div>
+                  </div>
+                  <div class="list">
+                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 终端设备管理</div>
+                    <div class="col-xs-6 text-right">
+                      <input type="checkbox" id="go5" checked>
+                    </div>
+                  </div>
+                      <p class="help-block">该账号具备的管理功能</p>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="sfName" class="col-sm-3 control-label">选择头像</label>
+                    <div class="col-sm-8">
+                      <select class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                      </select>
+                      <p class="help-block">帐户头像图片选择</p>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-block" >确认提交</button>
+                </form>
+              </div>
             </div>
-          </div>
-          <div class="tab-pane fade" id="addadmin">
-            <div style="text-align:center; clear:both; padding:5px;">
-              <h4><span class="glyphicon glyphicon-pencil"></span> 添加功能权限</h4>
-            </div>
-            <div class="col-xs-12">
-              <form id="form2" class="form-horizontal" role="form">
-                <div class="form-group">
-                  <label for="cname" class="col-sm-3 control-label">功能名称</label>
-                  <div class="col-sm-8">
-                    <input type="text" class="form-control" id="cname" required placeholder="必填项">
-                    <p class="help-block">后台管理功能的名称。</p>
+            <div class="tab-pane fade" id="addadmin">
+              <div style="text-align:center; clear:both; padding:5px;">
+                <h4><span class="glyphicon glyphicon-pencil"></span> 添加功能权限</h4>
+              </div>
+              <div class="col-xs-12">
+                <form id="form2" class="form-horizontal" role="form">
+                  <div class="form-group">
+                    <label for="cname" class="col-sm-3 control-label">功能名称</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="cname" required placeholder="必填项">
+                      <p class="help-block">后台管理功能的名称。</p>
+                    </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label for="curl" class="col-sm-3 control-label">访问路径</label>
-                  <div class="col-sm-8">
-                    <input type="text" class="form-control" id="curl" required placeholder="必填项">
-                    <p class="help-block">进入该功能的URL地址。</p>
+                  <div class="form-group">
+                    <label for="curl" class="col-sm-3 control-label">访问路径</label>
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" id="curl" required placeholder="必填项">
+                      <p class="help-block">进入该功能的URL地址。</p>
+                    </div>
                   </div>
-                </div>
-                <button type="submit" class="btn btn-primary btn-block" >确认提交</button>
-              </form>
+                  <button type="submit" class="btn btn-primary btn-block" >确认提交</button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
-       
     </div>
   </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+        <h4 class="modal-title" id="myModalLabel">详细信息</h4>
+      </div>
+      <div class="modal-body">
+        <div id="modal-loading" style="text-align:center;"><img src="dist/img/loading.gif" width="60" height="60" ><br>
+          <span id="modal-loading-tishi">正在获取详细信息...</span></div>
+        <div id="modal-neir-role">
+          <form id="form3" class="form-horizontal" role="form">
+            <div id="touxiang" style="text-align:center;"> <img src="dist/img/people.png" alt="" class="img-circle" width="128" height="128" style="border:#fff solid 5px;"></div>
+            <div class="form-group">
+              <label for="username1" class="col-sm-3 control-label">登录帐号</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="username1" required placeholder="必填项">
+                <input type="hidden" id="ID1" >
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password1" class="col-sm-3 control-label">登录密码</label>
+              <div class="col-sm-6">
+                <input type="password" class="form-control" id="password1" placeholder="必填项">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">管理功能</label>
+              <div class="col-sm-8">
+              
+              		<div class="list">
+                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 系统参数设置</div>
+                    <div class="col-xs-6 text-right">
+                      <input type="checkbox" id="go11" checked>
+                    </div>
+                  </div>
+                  <div class="list">
+                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 后台权限管理</div>
+                    <div class="col-xs-6 text-right">
+                      <input type="checkbox" id="go22" checked>
+                    </div>
+                  </div>
+                  <div class="list">
+                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 会员帐户管理</div>
+                    <div class="col-xs-6 text-right">
+                      <input type="checkbox" id="go33" checked>
+                    </div>
+                  </div>
+                  <div class="list">
+                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 终端交易管理</div>
+                    <div class="col-xs-6 text-right">
+                      <input type="checkbox" id="go44" checked>
+                    </div>
+                  </div>
+                  <div class="list">
+                    <div class="col-xs-6 text-left"><span class="glyphicon glyphicon-hand-right"></span> 终端设备管理</div>
+                    <div class="col-xs-6 text-right">
+                      <input type="checkbox" id="go55" checked>
+                    </div>
+                  </div>
+             
+            </div>
+            <div class="form-group">
+              <label class="col-sm-3 control-label">选择头像</label>
+              <div class="col-sm-8">
+                <select class="form-control">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
+                  <option>10</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div id="modal-neir-admin">
+          <form id="form4" class="form-horizontal" role="form">
+            <div class="form-group">
+              <label for="cname1" class="col-sm-3 control-label">功能名称</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="cname1" required placeholder="必填项">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="curl1" class="col-sm-3 control-label">访问路径</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" id="curl1" required placeholder="必填项">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="saveclose" type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> 关闭</button>
+        <button id="saveinfo" type="button" class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span> 保存修改</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <!-- Placed at the end of the document so the pages load faster --> 
 <script src="dist/js/jquery.min.js"></script> 
 <script src="dist/js/bootstrap.min.js"></script> 
+<script src="dist/js/bootstrap-switch.js"></script> 
 <script src="dist/js/ie10-viewport-bug-workaround.js"></script> 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug --> 
 <script src="dist/js/jquery.cookie.js"></script> 
-<script src="dist/js/bgchange.js"></script>
+<script src="dist/js/bgchange.js"></script> 
+<script>
+$(function() {
+	//初始化开关
+$('input[type="checkbox"]')
+  .bootstrapSwitch();
+});
+function view(cmm,id) {
+    //查询单个信息
+    $("#myModal").modal({
+        keyboard: true
+    });
+	$("#modal-loading").hide();
+	//$("#modal-neir-admin").hide();
+	//$("#modal-neir-role").hide();
+	
+	if(cmm=='role'){
+		$("#modal-neir-role").show();
+		$("#modal-neir-admin").hide();
+
+		}
+		
+	if(cmm=='admin'){
+		$("#modal-neir-admin").show();
+		$("#modal-neir-role").hide();
+			}
+}
+
+function del(e) {
+	//删除数据
+    var r = confirm("是否要删除数据？", "提示");
+    if (r == true) {
+		var id = $(e).parents('tr').attr("id");
+        var tr = $(e).parents('tr');
+		tr.remove();
+		}
+	
+	}
+</script>
 </body>
 </html>
