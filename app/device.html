@@ -14,6 +14,7 @@
 <!-- Bootstrap -->
 <link href="dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="dist/css/dashboard.css" rel="stylesheet">
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=0E994eb99bef1cc0e79d5cec36f9374d"></script>
 <!--[if lt IE 9]><script src="dist/js/ie8-responsive-file-warning.js"></script><![endif]-->
 <script src="dist/js/ie-emulation-modes-warning.js"></script>
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -80,24 +81,88 @@ data-target="#navbar"><span class="sr-only">菜单</span> <span class="icon-bar"
         <!-- Default panel contents -->
         <div class="panel-heading"><span class="glyphicon glyphicon-hdd"></span> 终端设备管理</a></div>
         <div class="panel-body">
-        <div class="col-xs-12">
-        <h5>终端分布地图</h5>
-        <div id="allmap">
-       
-        </div>
-        </div>
-        <div class="col-xs-12">
-        <h5>终端分布地图</h5>
-        <div id="1-result">
-        
-        </div>
-        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3" style="background:#5bc0de; color:#FFF;">
+            <h5><span class="glyphicon glyphicon-hdd"></span> 终端总数</h5>
+            <h1>237台</h1>
+          </div>
+           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3" style="background:#5cb85c; color:#FFF;">
+            <h5><span class="glyphicon glyphicon-globe"></span> 当前在线终端</h5>
+            <h1>205台</h1>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3" style="background:#555; color:#FFF;">
+            <h5><span class="glyphicon glyphicon-transfer"></span> 当前离线终端</h5>
+            <h1>3台</h1>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3" style="background:#d9534f; color:#FFF;">
+            <h5><span class="glyphicon glyphicon-wrench"></span> 当前故障终端</h5>
+            <h1>29台</h1>
+          </div>
+          <div class="col-xs-12">
+            <h5><span class="glyphicon glyphicon-hdd"></span> 终端列表</h5>
+          </div>
+          <table class="table table-hover" id="list-table">
+              <thead>
+               <tr><td colspan="4"><div class="btn-group" role="group" >
+               <button type="button" class="btn btn-primary">全部</button>
+  <button type="button" class="btn btn-primary">在线</button>
+  <button type="button" class="btn btn-primary">离线</button>
+  <button type="button" class="btn btn-primary">故障</button>
+</div></td></tr>
+               <tr>
+                  <th>编号</th>
+                  <th>状态</th>
+                  <th>分组</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>D02022201</td>
+                  <td>在线</td>
+                  <td>广州</td>
+                  <td>详细</td>
+                </tr>
+                 <tr>
+                  <td>D02022202</td>
+                  <td>在线</td>
+                  <td>广州</td>
+                  <td>详细</td>
+                </tr>
+                 <tr>
+                  <td>D02022203</td>
+                  <td>在线</td>
+                  <td>广州</td>
+                  <td>详细</td>
+                </tr>
+                 <tr>
+                  <td>D02022204</td>
+                  <td>在线</td>
+                  <td>广州</td>
+                  <td>详细</td>
+                </tr>
+                 <tr>
+                  <td>D02022205</td>
+                  <td>在线</td>
+                  <td>广州</td>
+                  <td>详细</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <td colspan="4"><button id="morepage" type="button" class="btn btn-primary btn-block"><span id="loading"></span>加载更多</button></td>
+                </tr>
+              </tfoot>
+                </table>
         </div>
         <div class="panel-footer"> </div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+
+</script>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <!-- Placed at the end of the document so the pages load faster --> 
